@@ -10,6 +10,7 @@ A python based application using flask and kafka for digital twin.
 ## Run The Application
 
 ```
+$ docker-compose up -d
 $ python app.py
 ```
 
