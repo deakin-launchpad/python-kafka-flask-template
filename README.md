@@ -1,4 +1,4 @@
-# Digital Twin Template Python
+# Kafka Flask Template Python
 A python based application using flask and kafka for digital twin.
 
 ## Contents
