@@ -13,16 +13,6 @@ import datetime
 from json import JSONEncoder
 app = Flask(__name__)
 
-app.config["MONGO_URI"] = "mongodb://localhost:27017/digital_twin_dev"
-mongo_client = PyMongo(app)
-mongo_db = mongo_client.db
-
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://deakin_launchpad:xmtD0T6hNOj5@digital-twin-dev.cqznqsycghdg.ap-southeast-2.rds.amazonaws.com:5432/digital_twin_dev'
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-app.secret_key = 'secret string'
-
-postgres_db = SQLAlchemy(app)
-
 producer = KafkaProducer(bootstrap_servers=['localhost:29092'],
                          value_serializer=lambda x: 
                          dumps(x).encode('utf-8'))
